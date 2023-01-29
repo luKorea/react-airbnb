@@ -26,6 +26,14 @@ module.exports = {
 ### 1.3 npm i normalize.css 样式重置
 ### 1.4 npm i styled-compoents css-in-js
 ### 1.5 npm i axios 网络请求
+### 1.6 npm i classnames
+### 1.7 第三方样式库
+```
+ "@emotion/react": "^11.10.5",
+ "@emotion/styled": "^11.10.5",
+ "@mui/material": "^5.11.6",
+ "@mui/styled-engine-sc": "^5.11.0",
+```
 
 ## 2. react全家桶
 ### 2.1 react-router-dom 路由

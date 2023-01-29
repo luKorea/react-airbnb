@@ -1,14 +1,14 @@
 import { useRoutes } from "react-router-dom";
 import routes from "./router";
+import AppHeader from "./components/app-header";
+import AppFooter from "./components/app-footer";
 
 function App() {
   return (
     <div className="App">
-      <div className="header">项目头部</div>
-      <div className="content">
-        {useRoutes(routes)}
-      </div>
-      <div className="footer">项目底部</div>
+      <AppHeader />
+      <div className="content">{useRoutes(routes)}</div>
+      <AppFooter />
     </div>
   );
 }
