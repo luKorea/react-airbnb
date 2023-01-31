@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/492.a55771de.chunk.js","mappings":"6HAEMA,GAAaC,EAAAA,EAAAA,OAAK,WACtB,OACE,uCAEJ,IAEA,W","sources":["views/entire-page/index.jsx"],"sourcesContent":["import React, { memo } from 'react'\n\nconst EntirePage = memo(() => {\n  return (\n    <div>EntirePage</div>\n  )\n})\n\nexport default EntirePage"],"names":["EntirePage","memo"],"sourceRoot":""}

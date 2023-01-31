@@ -23,6 +23,28 @@ module.exports = {
       '@': resolve('src'),
       'components': resolve('src/components'),
       'utils': resolve('src/utils')
+    },
+    // 配置打包文件夹名称, 静态文件路径
+    configure: (webpackConfig, {paths}) => {
+      paths.appBuild = 'dist'
+      webpackConfig.output = {
+        ...webpackConfig.output,
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
+      }
+      return webpackConfig;
     }
-  }
+  },
+  // 配置代理
+  // devServer: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://localhost:8000',
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //          "^/api": ''
+  //       }
+  //     }
+  //   },
+  // },
 }
