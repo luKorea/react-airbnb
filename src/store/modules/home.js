@@ -11,27 +11,23 @@ import {
   createAsyncThunk
 } from '@reduxjs/toolkit'
 
-export const fetchHomeDataAction = createAsyncThunk("fetchdata", (payload, {
+export const fetchHomeDataAction = createAsyncThunk("fetchdata", async (payload, {
   dispatch
 }) => {
-  getHomeGoodPriceData().then(res => {
-    dispatch(changeGoodPriceInfoAction(res))
-  })
-  getHomeHighScoreData().then(res => {
-    dispatch(changeHighScoreInfoAction(res))
-  })
-  getHomeDiscountData().then(res => {
-    dispatch(changeDiscountInfoAction(res))
-  })
-  getHomeHotRecommendData().then(res => {
-    dispatch(changeRecommendInfoAction(res))
-  })
-  getHomeLongforData().then(res => {
-    dispatch(changeLongforInfoAction(res))
-  })
-  getHomePlusData().then(res => {
-    dispatch(changePlusInfoAction(res))
-  })
+  // payload 用户传入的参数
+  // store 对象
+  const goodPrice = await getHomeGoodPriceData()
+  dispatch(changeGoodPriceInfoAction(goodPrice))
+  const highScore = await getHomeHighScoreData()
+  dispatch(changeHighScoreInfoAction(highScore))
+  const discount = await getHomeDiscountData()
+  dispatch(changeDiscountInfoAction(discount))
+  const recommend = await getHomeHotRecommendData()
+  dispatch(changeRecommendInfoAction(recommend))
+  const longfor = await getHomeLongforData()
+  dispatch(changeLongforInfoAction(longfor))
+  const plus = await getHomePlusData()
+  dispatch(changePlusInfoAction(plus))
 })
 
 

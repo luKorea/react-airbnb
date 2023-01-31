@@ -6,7 +6,9 @@ import { ViewWrapper } from './style'
 
 const ScrollView = memo((props) => {
   /** 定义内部的状态 */
+  // 显示这边按钮
   const [showLeft, setShowLeft] = useState(false)
+  // 显示右边按钮
   const [showRight, setShowRight] = useState(false)
   const [posIndex, setPosIndex] = useState(0)
   const totalDistanceRef = useRef()

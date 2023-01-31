@@ -53,7 +53,7 @@ export const ItemWrapper = styled.div`
     display: flex;
     align-items: center;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
     color: ${props => props.theme.text.primaryColor};
 
     .count {
