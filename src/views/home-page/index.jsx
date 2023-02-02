@@ -43,7 +43,7 @@ const HomePage = memo(() => {
         {isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo} />}
         {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
         {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
-        {isEmptyO(plusInfo) && <HomeSectionV3 infoData={plusInfo} />}
+        {/* {isEmptyO(plusInfo) && <HomeSectionV3 infoData={plusInfo} />} */}
       </div>
     </HomeWrapper>
   );

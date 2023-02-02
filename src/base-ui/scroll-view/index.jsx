@@ -6,7 +6,7 @@ import { ViewWrapper } from './style'
 
 const ScrollView = memo((props) => {
   /** 定义内部的状态 */
-  // 显示这边按钮
+  // 显示左边按钮
   const [showLeft, setShowLeft] = useState(false)
   // 显示右边按钮
   const [showRight, setShowRight] = useState(false)
@@ -18,20 +18,28 @@ const ScrollView = memo((props) => {
   useEffect(() => {
     const scrollWidth = scrollContentRef.current.scrollWidth // 一共可以滚动的宽度
     const clientWidth = scrollContentRef.current.clientWidth // 本身占据的宽度
-    const totalDistance = scrollWidth - clientWidth
+    const totalDistance = scrollWidth - clientWidth // 可滚动区域
+    console.log(totalDistance, "totalDistance");
     totalDistanceRef.current = totalDistance 
     setShowRight(totalDistance > 0)
   }, [props.children])
 
   /** 事件处理的逻辑 */
   function controlClickHandle(isRight) {
+    // 根据用户传入的值判断当前位置是否+1
     const newIndex = isRight ? posIndex + 1: posIndex - 1
     const newEl = scrollContentRef.current.children[newIndex]
     const newOffsetLeft = newEl.offsetLeft
+    console.log(
+      newOffsetLeft,
+      "当前项距离左边的距离",
+      totalDistanceRef.current
+    );
     scrollContentRef.current.style.transform = `translate(-${newOffsetLeft}px)`
     setPosIndex(newIndex)
     // 是否继续显示右侧的按钮
     setShowRight(totalDistanceRef.current > newOffsetLeft)
+    // 当前距离左边距离为0时不显示
     setShowLeft(newOffsetLeft > 0)
   }
 
