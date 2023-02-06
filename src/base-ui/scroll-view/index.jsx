@@ -6,7 +6,7 @@ import { ViewWrapper } from "./style";
 
 const ScrollView = memo((props) => {
   /** 定义内部的状态 */
-  // 显示这边按钮
+  // 显示左边按钮
   const [showLeft, setShowLeft] = useState(false);
   // 显示右边按钮
   const [showRight, setShowRight] = useState(false);
