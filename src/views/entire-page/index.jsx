@@ -1,9 +1,24 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from "react";
+import { EntireWrapper } from "./styled";
+import EntireFilter from "./cpns/entire-filter";
+import EntireRooms from "./cpns/entire-rooms";
+import EntirePagination from "./cpns/entire-pagination";
+import { useDispatch } from "react-redux";
+import { fetchEntireDataAction } from "@/store/modules/entire";
 
 const EntirePage = memo(() => {
-  return (
-    <div>EntirePage</div>
-  )
-})
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchEntireDataAction());
+  }, [dispatch]);
 
-export default EntirePage
+  return (
+    <EntireWrapper>
+      <EntireFilter />
+      <EntireRooms />
+      <EntirePagination />
+    </EntireWrapper>
+  );
+});
+
+export default EntirePage;

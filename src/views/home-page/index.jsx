@@ -7,8 +7,9 @@ import { fetchHomeDataAction } from "@/store/modules/home";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeSectionV1 from "./cpns/home-section-v1";
 import HomeSectionV2 from "./cpns/home-section-v2";
-import { isEmptyO } from "@/utils";
 import HomeSectionV3 from "./cpns/home-section-v3";
+import HomeLongfor from "./cpns/home-longfor";
+import { isEmptyO } from "@/utils";
 
 const HomePage = memo(() => {
   const {
@@ -41,6 +42,7 @@ const HomePage = memo(() => {
       <div className="content">
         {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo} />}
         {isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo} />}
+        {isEmptyO(longforInfo) && <HomeLongfor infoData={longforInfo} />}
         {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
         {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
         {isEmptyO(plusInfo) && <HomeSectionV3 infoData={plusInfo} />}
