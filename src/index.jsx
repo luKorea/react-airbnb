@@ -16,14 +16,14 @@ import theme from "./assets/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Suspense fallback={<div>Loading...</div>}>
-    <BrowserRouter>
-      {/* styled-components 主题配置  */}
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
+  <Provider store={store}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        {/* styled-components 主题配置  */}
+        <ThemeProvider theme={theme}>
           <App />
-        </Provider>
-      </ThemeProvider>
-    </BrowserRouter>
-  </Suspense>
+        </ThemeProvider>
+      </BrowserRouter>
+    </Suspense>
+  </Provider>
 );

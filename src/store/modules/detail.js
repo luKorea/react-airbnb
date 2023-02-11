@@ -1,17 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {
+  createSlice
+} from "@reduxjs/toolkit";
 
 const detailSlice = createSlice({
   name: 'detailReducer',
   initialState: {
-    list: []
+    detailInfo: {}
   },
   reducers: {
-    getData(state, {payload}) {
-      state.list = payload
+    setDetailInfoAction(state, {
+      payload
+    }) {
+      state.detailInfo = payload
     }
   }
 })
 
-export const { getData } = detailSlice.actions
+export const {
+  setDetailInfoAction
+} = detailSlice.actions
 
 export default detailSlice.reducer

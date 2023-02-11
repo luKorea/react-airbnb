@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.div `
   flex-shrink: 0;
   box-sizing: border-box;
   width: ${props => props.itemWidth};
@@ -58,12 +58,13 @@ export const ItemWrapper = styled.div`
         .dot {
           width: 6px;
           height: 6px;
-          background-color: #fff;
+          background-color: rgba(0,0,0, .6);
           border-radius: 50%;
 
           &.active {
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
+            background: #fff;
           }
         }
       }

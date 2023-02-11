@@ -5,7 +5,7 @@ export const FilterWrapper = styled.div `
   top: 81px;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 10;
   display: flex;
   align-items: center;
   height: 48px;

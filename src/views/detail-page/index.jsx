@@ -1,9 +1,23 @@
-import React, { memo } from 'react'
+// import { changeHeaderConfigAction } from "@/store/modules/main";
+import React, { memo, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import DetailInfos from "./cpns/detail-infos";
+import DetailPictures from "./cpns/detail-pictures";
+import { DetailWrapper } from "./styled";
+import { changeHeaderConfigAction } from "@/store/modules/main";
 
-const DetailPage = memo(() => {
+const Detail = memo(() => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(changeHeaderConfigAction({ isFixed: false, topAlpha: false }));
+  }, [dispatch]);
+
   return (
-    <div>DetailPage</div>
-  )
-})
+    <DetailWrapper>
+      <DetailPictures />
+      <DetailInfos />
+    </DetailWrapper>
+  );
+});
 
-export default DetailPage
+export default Detail;
