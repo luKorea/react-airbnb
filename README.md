@@ -39,6 +39,25 @@ module.exports = {
 ### 2.1 react-router-dom 路由
 ### 2.2 npm i @reduxjs/toolkit react-redux redux状态管理
 
+
+## 项目部署
+npm install gh-pages --save-dev
+```text
+1.配置homepage：
+修改你的github仓库地址
+“homepage”: “https://songbl.github.io/React-app”, 配置的访问路径
+2.配置发布选项
+“predeploy”: “npm run build”,
+“deploy”: “gh-pages -d build”
+predeploy:是将你的项目预编译成静态文件放在build文件夹
+deploy:是使用gh-pages 部署你的build文件夹下的内容
+文件夹名称自己指定
+####5.安装 gh-pages
+npm install gh-pages --save-dev
+####6.部署项目到github page上
+npm run deploy
+```
+
 ## 文件目录结构
 ```text
 
