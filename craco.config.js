@@ -5,19 +5,19 @@ const resolve = pathName => path.resolve(__dirname, pathName)
 
 module.exports = {
   // less 配置
-  plugins: [
-    {
-      plugin: CracoLessPlugin,
-      options: {
-        lessLoaderOptions: {
-          lessOptions: {
-            modifyVars: { '@primary-color': '#1DA57A' },
-            javascriptEnabled: true,
+  plugins: [{
+    plugin: CracoLessPlugin,
+    options: {
+      lessLoaderOptions: {
+        lessOptions: {
+          modifyVars: {
+            '@primary-color': '#1DA57A'
           },
+          javascriptEnabled: true,
         },
       },
     },
-  ],
+  }, ],
   webpack: {
     alias: {
       '@': resolve('src'),
@@ -25,12 +25,14 @@ module.exports = {
       'utils': resolve('src/utils')
     },
     // 配置打包文件夹名称, 静态文件路径
-    configure: (webpackConfig, {paths}) => {
+    configure: (webpackConfig, {
+      paths
+    }) => {
       paths.appBuild = 'dist'
       webpackConfig.output = {
         ...webpackConfig.output,
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        // publicPath: process.env.NODE_ENV === 'production' ? '/react-airbnb' : '/'
       }
       return webpackConfig;
     }

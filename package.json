@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://luKorea.github.io/react-airbnb",
+  "homepage": "https://luKorea.github.io/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -31,8 +31,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "push": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
